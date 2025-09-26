@@ -1,4 +1,4 @@
-# Laravel + React Starter Kit without Wayfinder & Tow Factor
+# Laravel + React Starter Kit without Wayfinder & Two Factor
 
 ## Introduction
 

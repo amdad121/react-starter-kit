@@ -1,6 +1,4 @@
 // Components
-import EmailVerificationNotificationController from '@/actions/App/Http/Controllers/Auth/EmailVerificationNotificationController';
-import { logout } from '@/routes';
 import { Form, Head } from '@inertiajs/react';
 import { LoaderCircle } from 'lucide-react';
 
@@ -24,7 +22,8 @@ export default function VerifyEmail({ status }: { status?: string }) {
             )}
 
             <Form
-                {...EmailVerificationNotificationController.store.form()}
+                method="post"
+                action={route('verification.send')}
                 className="space-y-6 text-center"
             >
                 {({ processing }) => (
@@ -37,7 +36,8 @@ export default function VerifyEmail({ status }: { status?: string }) {
                         </Button>
 
                         <TextLink
-                            href={logout()}
+                            href={route('logout')}
+                            method="post"
                             className="mx-auto block text-sm"
                         >
                             Log out
